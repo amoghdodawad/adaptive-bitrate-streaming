@@ -25,9 +25,10 @@ async function init(req, res){
         const { uploadedby: uploadedBy } = req.headers;
         const { uploadId } = await multipartUploader.initialiseUpload(fileName, totalChunks);
         const { name } = await User.findOne({ email: uploadedBy }, { _id: 0, name: 1 });
-        let improvisedDescription = videoDescription + ` . Video by ${name}`;
+        let improvisedDescription = videoTitle + ' ' + videoDescription + ` Video by ${name}`;
         const video = new Video({ videoId: uploadId, videoTitle, videoDescription: improvisedDescription, uploadedBy, url: 'url' });
         await video.save();
+        await rabbitMQProducer.produceMessageToExchange('trie-exchange',improvisedDescription);
         res.json({ uploadId });
     } catch (error) {
         res.status(500).json({ message: 'Some error' });

@@ -1,4 +1,5 @@
 const Video = require('../models/Video');
+const { parseQuery } = require('../trie/trie');
 
 async function search(req, res){
     try {
@@ -6,7 +7,7 @@ async function search(req, res){
         if(!searchQuery || parseInt(page) < 1) throw new Error('err'); 
         const videos = await Video
                                 .find(
-                                    { $text: { $search: searchQuery }},
+                                    { $text: { $search: parseQuery(searchQuery) }},
                                     { _id: 0, videoTitle: 1, videoDescription: 1, videoId: 1, uploadedBy: 1},
                                     { score: { $meta: 'textScore' }})
                                 .sort({ score: { $meta: 'textScore' }})

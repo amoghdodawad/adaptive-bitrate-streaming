@@ -87,11 +87,14 @@ function parseQuery(query){
     return trie.parsedSearch(query);
 }
 
-function insertWord(word){
-    trie.insert(word);
+function insertText(text){
+    const words = text.split(' ');
+    for(const word of words){
+        trie.insert(word);
+    }
 }
 
 module.exports = {
     parseQuery,
-    insertWord
+    insertText
 }

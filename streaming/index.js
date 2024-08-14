@@ -4,6 +4,7 @@ const searchRouter = require('./routes/searchRouter');
 const cors = require('cors');
 require('dotenv').config();
 require('mongoose').connect(process.env.MONGO_URI);
+require('./rabbitmqConsumer/rabbitmqConsumer')
 
 const app = express();
 const PORT = process.env.PORT;
