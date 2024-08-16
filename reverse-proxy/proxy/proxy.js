@@ -21,7 +21,7 @@ function proxyMiddleware(req, res, next){
     }
 
     if (target) {
-        console.log(`Proxying request to: ${target}${req.url}`);
+        // console.log(`Proxying request to: ${target}${req.url}`);
         proxy.web(req, res, { target: target });
     } else {
         next();
