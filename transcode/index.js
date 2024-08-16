@@ -24,6 +24,11 @@ const HOST = process.env.HOST || 'amqp://localhost';
                         requeueThisMessage: false
                     })
                 }
+                if(file.split(' ').length > 1){
+                    console.log('Rejecting due to improper file name');
+                    channel.reject(message,false);
+                    return;
+                }
                 await processVideo(file,location);
                 await Video.findOneAndUpdate({ videoId: uploadId }, { isHls: true });
                 channel.ack(message);
