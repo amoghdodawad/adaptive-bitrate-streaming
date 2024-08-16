@@ -1,0 +1,74 @@
+.videos-super-container {
+    height: 70vh; 
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+  
+  .videos-component-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .videos-card {
+    background-color: transparent;
+    border: 2px solid rgb(241, 84, 116);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .videos-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(229, 49, 85);
+    padding: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .videos-channel-name {
+    font-size: 0.9rem;
+    background-color: #ffe9ea;
+    color: rgb(229, 49, 85);
+    padding: 0.5rem 1rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+  }
+  
+  .videos-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(229, 49, 85, 0.3);
+  }
+  
+  .videos-card:hover .videos-title {
+    background-color: rgba(229, 49, 85, 0.92);
+    color: white;
+  }
+  
+  .videos-card:hover .videos-channel-name {
+    background-color: rgba(229, 49, 85, 0.92);
+    color: white;
+  }
+  
+  .videos-super-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .videos-super-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  .videos-super-container::-webkit-scrollbar-thumb {
+    background: rgba(229, 49, 85, 0.5);
+    border-radius: 10px;
+  }
+  
+  .videos-super-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(229, 49, 85, 0.8);
+  }
+  
+  a {
+    text-decoration: none;
+  }

@@ -1,0 +1,109 @@
+.player-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background-color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-player {
+    width: 100%;
+    height: 100%;
+}
+
+.control-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(229, 49, 85, 0.8);
+    padding: 10px 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.controls select {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 4px;
+}
+
+.time-slider {
+    flex-grow: 1;
+    margin: 0 20px;
+    cursor: pointer;
+    background: transparent;
+    -webkit-appearance: none;
+}
+
+.time-slider::-webkit-slider-runnable-track {
+    height: 4px;
+    background: #ffffff;
+    border-radius: 2px;
+}
+
+.time-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: #ffffff;
+    margin-top: -5px;
+}
+
+.time-slider::-moz-range-track {
+    height: 4px;
+    background: #ffffff;
+    border-radius: 2px;
+}
+
+.time-slider::-moz-range-thumb {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+.time-display {
+    font-size: 14px;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+}
+
+.player-container button:focus, select:focus {
+    outline: none;
+}

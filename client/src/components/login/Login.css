@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background: linear-gradient(135deg, #fcfcfd, #fffaec);
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+}
+
+.login-form {
+    background: white;
+    padding: 2rem;
+    padding-top: 0.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(229, 49, 85, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login-form h2 {
+    color: rgb(229, 49, 85);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgb(229, 49, 85);
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid rgb(241, 84, 116);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: rgb(229, 49, 85);
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: rgb(229, 49, 85);
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(229, 49, 85);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.login-container button:hover {
+    background-color: rgba(229, 49, 85, 0.8);
+}
+
+.toggle-form {
+    margin-top: 1rem;
+    text-align: center;
+    color: rgb(229, 49, 85);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.toggle-form:hover {
+    opacity: 0.8;
+}

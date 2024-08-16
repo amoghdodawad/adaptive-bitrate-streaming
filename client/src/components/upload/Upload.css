@@ -1,0 +1,94 @@
+.video-upload-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #fcfcfd, #fffaec);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(229, 49, 85, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+.video-upload-container h2 {
+    color: rgb(229, 49, 85);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.file-input-container,
+.input-container {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgb(229, 49, 85);
+    font-weight: 500;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.file-input-container label {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: rgb(229, 49, 85);
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-input-container label:hover {
+    background-color: rgba(229, 49, 85, 0.8);
+}
+
+.file-name {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: rgb(229, 49, 85);
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid rgb(241, 84, 116);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: rgb(229, 49, 85);
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: rgb(229, 49, 85);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: rgb(229, 49, 85);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(229, 49, 85, 0.8);
+}

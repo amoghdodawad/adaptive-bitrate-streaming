@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+.search-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fcfcfd, #fffaec);
+  min-height: 70vh;
+}
+
+.search-input-container {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input-container input {
+  width: 50%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  border: 2px solid rgb(241, 84, 116);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  color: rgb(229, 49, 85);
+}
+
+.search-input-container input::placeholder {
+  color: rgba(229, 49, 85, 0.6);
+}
+
+.search-input-container input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(229, 49, 85, 0.3);
+}
+
+.search-response-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.channels-super-container,
+.videos-super-container {
+  flex: 1;
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.channels-super-container > div:first-child,
+.videos-super-container > div:first-child {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: rgb(229, 49, 85);
+}
