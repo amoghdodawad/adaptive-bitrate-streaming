@@ -22,11 +22,12 @@ multipartUploader.configure({
 async function init(req, res){
     try {
         const { fileName, totalChunks, videoTitle, videoDescription } = req.body;
+        const extension = fileName.split('.').at(-1);
+        if(extension !== 'mp4') throw new Error('Unsupported file type');
         const { uploadedby: uploadedBy } = req.headers;
-        const { uploadId } = await multipartUploader.initialiseUpload(fileName, totalChunks);
-        const { name } = await User.findOne({ email: uploadedBy }, { _id: 0, name: 1 });
-        let improvisedDescription = videoTitle + ' ' + videoDescription + ` Video by ${name}`;
-        const video = new Video({ videoId: uploadId, videoTitle, videoDescription: improvisedDescription, uploadedBy, url: 'url' });
+        const { uploadId } = await multipartUploader.initialiseUpload(fileName.split(' ').join('_'), totalChunks);
+        let improvisedDescription = videoTitle + ' ' + videoDescription;
+        const video = new Video({ videoId: uploadId, videoTitle, videoDescription, uploadedBy, url: 'url' });
         await video.save();
         await rabbitMQProducer.produceMessageToExchange('trie-exchange',improvisedDescription);
         res.json({ uploadId });
