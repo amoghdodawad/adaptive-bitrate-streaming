@@ -7,7 +7,8 @@ ffmpeg.setFfmpegPath(ffmpegPath);
 
 const formats = [
     { resolution: '1920x1080', bitrate: '5000k' },
-    { resolution: '1280x720', bitrate: '3000k' }
+    { resolution: '1280x720', bitrate: '3000k' },
+    { resolution: '320x240', bitrate: '100k'}
 ];
 
 function createHLSStream(format, inputFile, outputDir) {
