@@ -42,7 +42,10 @@ function Player({ src }) {
             });
 
             hls.on(Hls.Events.LEVEL_SWITCHED,() => {
-                if(resolutionSwitchTime.current === 0) return;
+                if(resolutionSwitchTime.current === 0) {
+                    setTotalTime(videoRef.current.duration);
+                    return;
+                }
                 video.currentTime = resolutionSwitchTime.current;
                 video.play();
 
