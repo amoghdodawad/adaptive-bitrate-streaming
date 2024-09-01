@@ -1,4 +1,5 @@
-const multipartUploader = require('multipart-uploader-backend');
+const MultiPartManager = require('multipart-uploader-backend');
+const localStratergy = require('multipart-uploader-backend/stratergy/localStratergy.js');
 const RabbitMQProducer = require('../RabbitMQProducer/producer');
 const Video = require('../models/Video');
 const User = require('../models/User');
@@ -13,6 +14,8 @@ const rabbitMQProducer = new RabbitMQProducer();
         process.exit(1);
     }
 })();
+
+const multipartUploader = new MultiPartManager(localStratergy);
 
 multipartUploader.configure({
     chunksDirectory: process.env.CHUNKS_DIR,
